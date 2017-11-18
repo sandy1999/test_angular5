@@ -36,7 +36,8 @@ import { FormService } from './form.service';
   myEvent(){
     if (this.testForm.valid) {
       let formvalue  = this.testForm.value;
-      this._form.submitForm(formvalue);
+      let submitteduser =  this._form.submitForm(formvalue);
+      console.log(submitteduser);
     }else
     window.alert('there are some errors in your form please check them and then submit');
   }
