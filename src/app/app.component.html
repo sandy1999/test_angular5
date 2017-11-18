@@ -1,0 +1,20 @@
+<div class="container">
+  <!-- <app-navbar></app-navbar> -->
+
+  <form action="" [formGroup]="testForm" (ngSubmit)="myEvent()" class="form">
+    <input type="text" formControlName="name">
+    <div class="errors" *ngIf="name.invalid && name.dirty">
+      <div *ngIf="name.errors?.required" >Required</div>
+      <div *ngIf="name.errors?.minlength">More than {{name.errors?.minlength.requiredLength}} characters</div>
+    </div>
+    <div>
+      <button class="btn btn-default" type="submit">Submit</button>
+    </div>
+  </form>
+  <img src="assets/images/download.jpg" alt="" srcset="">
+</div>
+
+<div *ngFor="let res of result">
+  <h1>{{res.title}}</h1>
+  <p>{{res.body}}</p>
+</div>
