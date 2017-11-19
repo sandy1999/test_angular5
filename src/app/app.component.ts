@@ -20,9 +20,10 @@ import { FormService } from './form.service';
       name:new FormControl('',{
         validators:[
           Validators.required,
-          Validators.minLength(6)
+          Validators.minLength(6),
+          Validators.pattern('[a-zA-Z ]*')
         ],
-        updateOn:'submit'
+        updateOn:'blur'
       })
     })
     this._form.getData().subscribe(res=>{

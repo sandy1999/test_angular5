@@ -6,6 +6,7 @@
     <div class="errors" *ngIf="name.invalid && name.dirty">
       <div *ngIf="name.errors?.required" >Required</div>
       <div *ngIf="name.errors?.minlength">More than {{name.errors?.minlength.requiredLength}} characters</div>
+      <div *ngIf="name.errors?.pattern">Should only contain chars</div>
     </div>
     <div>
       <button class="btn btn-default" type="submit">Submit</button>
