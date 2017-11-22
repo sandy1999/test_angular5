@@ -13,7 +13,7 @@ import { FormService } from './form.service';
   testForm: FormGroup;
 
   result:any;
-  constructor(private _form:FormService){}
+  constructor(){}
 
   ngOnInit(){
     this.testForm = new FormGroup({
@@ -26,9 +26,9 @@ import { FormService } from './form.service';
         updateOn:'blur'
       })
     })
-    this._form.getData().subscribe(res=>{
-      this.result = res;
-    });
+    // this._form.getData().subscribe(res=>{
+    //   this.result = res;
+    // });
   }
   get name(){
     return this.testForm.get('name');
@@ -37,8 +37,8 @@ import { FormService } from './form.service';
   myEvent(){
     if (this.testForm.valid) {
       let formvalue  = this.testForm.value;
-      let submitteduser =  this._form.submitForm(formvalue);
-      console.log(submitteduser);
+      // let submitteduser =  this._form.submitForm(formvalue);
+      // console.log(submitteduser);
     }else
     window.alert('there are some errors in your form please check them and then submit');
   }

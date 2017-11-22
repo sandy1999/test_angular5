@@ -1,0 +1,8 @@
+<h1>Todos</h1>
+<form class="form">
+  <input type="text" (keyup.enter)="addTodo(todo.value)" class="form-control" #todo>
+</form>
+<ul class="list-group">
+  <li @todoAnimation
+  *ngFor="let mytodo of myTodos" (click)="deleteTodo(mytodo)" class="list-group-item custom-todos">{{mytodo}}</li>
+</ul>
